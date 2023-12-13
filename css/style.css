@@ -1,0 +1,148 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+/* CSS header */
+header .navbar-nav .nav-item:hover a {
+    color: green !important;
+    /* important được sử dụng khi mún đề hết tất cả các css của thuộc tính đang được sử dụng  */
+}
+
+
+header .navbar-nav .nav-item {
+    position: relative;
+}
+
+
+header .navbar-nav .nav-item::before {
+    content: '';
+    background-color: green;
+    width: 0;
+    height: 3px;
+    display: block;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    transition: all 0.5s;
+}
+
+
+header .navbar-nav .nav-item:hover::before{
+    width: 100%;
+}
+
+header .navbar-nav .active a {
+    color: green !important;
+}
+
+
+header .navbar-nav .active::before{
+    width: 100%;
+}
+
+/* carousel  */
+.carousel .carousel-item {
+    height: 100%;
+    position: relative;
+}
+
+.carousel .carousel-item img {
+    height: 100%;
+
+}
+
+.carousel .carousel-item div {
+    /* cách 2 canh giữa nội dung  */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.541);
+
+    color: white;
+
+    
+}
+
+.carousel .carousel-item div img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+.carousel .carousel-item div h2  {
+    font-size: 56px;
+}
+
+
+.carousel .carousel-item div p  {
+    font-size: 24px;
+}
+
+/* project css  */
+.project .nav-pills .nav-link.active {
+    color: white !important;
+    background-color: #35A22C;
+
+    border-color: #35A22C !important;
+
+}
+
+.project .tab-content .project_item:hover h3 {
+    color: #35A22C;
+}
+
+.project .tab-content .project_item .item_text {
+    transition: all 0.5s;
+    border-radius: 0 0 16px 16px;
+    border: 1px solid transparent;
+    border-top: none;
+}
+
+.project .tab-content .project_item:hover .item_text {
+    /* Khi hover thay đổi màu border để có thể nhận thuộc tính transition  */
+    border: 1px solid #35A22C;
+}
+
+/* CSS .available */
+.available {
+    background-image: url(./../image/3.jpg);
+    background-attachment: fixed;
+    position: relative;
+
+}
+
+.available::before {
+    content: '';
+    background-color: rgba(7, 10, 12, 0.72);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.available .available_item {
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
